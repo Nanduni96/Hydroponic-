@@ -1,0 +1,59 @@
+"""Reservoir unit"""
+
+LEDs...
+RF for the pump which sends water to fertilizer unit- R1
+RL for water level HIGH - R2
+RH for water level LOW - R3
+(R2 and R3 are for pumping water from the pump unit to the reservoir)
+RD Drain - R4
+
+
+**********Manual mode**********
+
+MQTT msg format
+
+"R1_on"  - to manually turn on RF
+"R1_off"  - to manually turn off RF
+
+"R2_on"  - to manually turn on RL
+"R2_off"  - to manually turn off RL
+
+"R3_on"  - to manually turn on RH
+"R3_off"  - to manually turn off RH
+
+"R4_on"  - to manually turn on RD
+"R4_off"  - to manually turn off RD
+
+**********Automatic Mode**********
+
+
+sendToF = 1  - turn on RF
+sendToF = 0  - turn off RF
+
+
+"""NO leds are on within the optimal water level
+water_low  = 0  - turn on RL
+water_low  = 1  - turn off RL
+
+water_high  = 1  - turn on RH
+water_high  = 0  - turn off RH
+
+drain = 1 - turn on RD
+drain = 0 - turn off RD
+
+
+
+**********MQTT msg format (payload format)************
+
+"R11"  - to turn on
+"R10"  - to turn off
+
+"R20"  - to turn on
+"R21"  - to turn off
+
+"R31"  - to turn on
+"R30"  - to turn off
+
+"R41"  - to turn on
+"R40"  - to turn off
+
